@@ -1,1 +1,168 @@
+:root {
+  --peach-main: #FF9EAA;
+  --peach-light: #FFD0D0;
+  --cream-bg: #FFF5E4;
+  --yellow-pop: #FFD966;
+  --dark-text: #2D221E;
+  --border-thick: 4px solid #2D221E;
+  --shadow-hard: 6px 6px 0px #2D221E;
+  --shadow-hover: 10px 10px 0px #2D221E;
+  --radius-lg: 24px;
+}
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Sukhumvit Set', 'Kanit', sans-serif;
+  background-color: var(--cream-bg);
+  color: var(--dark-text);
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+/* Abstract Shapes */
+.blob-1 {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: var(--peach-main);
+  border-radius: 40% 60% 70% 30% / 40% 50% 60% 70%;
+  z-index: -1;
+  opacity: 0.6;
+}
+
+.blob-2 {
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  background: var(--yellow-pop);
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  z-index: -1;
+  opacity: 0.7;
+}
+
+/* Navigation */
+header {
+  padding: 1.5rem 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  background: var(--yellow-pop);
+  padding: 5px 15px;
+  border: var(--border-thick);
+  box-shadow: var(--shadow-hard);
+  transform: rotate(-2deg);
+}
+
+nav {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--dark-text);
+  font-weight: 700;
+  padding: 8px 16px;
+  border-radius: 12px;
+  border: 2px solid transparent;
+  transition: all 0.2s ease;
+}
+
+nav a:hover, nav a.active {
+  background: var(--peach-main);
+  border: var(--border-thick);
+}
+
+/* Typography & Components */
+h1 {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 900;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.btn-main {
+  display: inline-block;
+  font-size: 1.25rem;
+  font-weight: 800;
+  text-decoration: none;
+  color: var(--dark-text);
+  background: var(--yellow-pop);
+  padding: 12px 28px;
+  border-radius: 50px;
+  border: var(--border-thick);
+  box-shadow: var(--shadow-hard);
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.btn-main:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: var(--shadow-hover);
+  background: var(--peach-main);
+}
+
+/* Neo-brutalism Card */
+.card-thick {
+  background: #FFF;
+  border: var(--border-thick);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: var(--shadow-hard);
+  transition: all 0.2s ease;
+}
+
+.card-thick:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+}
+
+/* Base Layout */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 0 5rem 0;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  background: var(--peach-light);
+  border-top: var(--border-thick);
+  font-weight: 700;
+}
+
+/* Responsive Grid */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  align-items: center;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
